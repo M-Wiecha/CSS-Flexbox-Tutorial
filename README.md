@@ -27,7 +27,7 @@ Lade dieses Repository herunter und öffne die `index.html` in deinem Texteditor
 ## 🌐 Live-Demo
 
 Schau dir das Flexbox-Labor direkt live im Browser an:
-👉 **[HIER DEINEN GITHUB-PAGES-LINK EINFÜGEN]**
+👉 <a href="https://m-wiecha.github.io/css-flexbox-tutorial/" target="_blank" rel="noopener noreferrer">Hier geht's zur Live-Demo</a> 🚀
 
 ---
 

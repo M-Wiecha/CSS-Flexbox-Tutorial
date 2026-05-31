@@ -2,6 +2,9 @@
 
 Ein praktisches Cheat-Sheet und interaktives Lernprojekt, um die Logik hinter CSS Flexbox (Flexible Box Layout) visuell zu verstehen. Nie wieder raten, wie man Elemente perfekt zentriert!
 
+> 💻 **Tipp für das beste Lernergebnis:**
+> Obwohl dieses Tutorial komplett responsiv ist und auf dem Smartphone sauber angezeigt wird, solltest du es **am besten am PC oder Laptop nutzen**. Nur so kannst du den Code nebenbei in einem Editor öffnen, Werte verändern und die Experimente aktiv ausprobieren!
+
 ---
 
 ## 🚀 Was ist Flexbox?

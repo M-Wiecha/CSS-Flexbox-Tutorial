@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interaktives CSS Flexbox Tutorial</title>
+    <style>
+        /* ==========================================
+           1. RESET & BASIS-STYLING
+           ========================================== */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f6fa;
+            color: #333;
+            line-height: 1.5;
+            padding: 20px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 8px;
+            text-align: center;
+        }
+
+        .description {
+            color: #7f8c8d;
+            font-size: 0.95rem;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        /* ==========================================
+           2. DAS FLEX-CONTAINER LABOR
+           ========================================== */
+        .flex-labor-titel {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        /* Das ist der Eltern-Container (Flex-Container) */
+        .flex-container {
+            background-color: #dfe4ea;
+            border: 3px dashed #a4b0be;
+            border-radius: 8px;
+            min-height: 250px;
+            padding: 15px;
+
+            /* HIER WIRD FLEXBOX AKTIVIERT! */
+            display: flex;
+            
+            /* AUSRICHTUNG (Spiele mit diesen Werten!) */
+            flex-direction: row;       /* Richtung: row (nebeneinander) oder column (untereinander) */
+            justify-content: space-around; /* Horizontale Achse: flex-start, center, flex-end, space-between, space-around */
+            align-items: center;       /* Vertikale Achse: flex-start, center, flex-end, stretch */
+            flex-wrap: wrap;           /* Erlaubt Zeilenumbruch, falls der Platz auf Handys knapp wird */
+        }
+
+        /* Das sind die Kind-Elemente (Flex-Items) */
+        .flex-item {
+            background-color: #9b59b6; /* Lila */
+            color: white;
+            padding: 20px;
+            margin: 10px;
+            border-radius: 6px;
+            font-weight: bold;
+            text-align: center;
+            min-width: 80px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
+        }
+
+        .flex-item:hover {
+            transform: scale(1.05);
+        }
+
+        /* Individuelle Farben für die Boxen */
+        .item-1 { background-color: #e74c3c; }
+        .item-2 { background-color: #2ecc71; }
+        .item-3 { background-color: #3498db; }
+
+        /* ==========================================
+           3. CHEAT-SHEET ERKLÄRUNG
+           ========================================== */
+        .cheat-sheet {
+            margin-top: 40px;
+            border-top: 2px solid #f1f2f6;
+            padding-top: 25px;
+        }
+
+        .cheat-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 15px;
+        }
+
+        .cheat-card {
+            flex: 1;
+            min-width: 250px;
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 6px;
+            border-left: 4px solid #3498db;
+        }
+
+        .cheat-card h3 {
+            font-size: 1rem;
+            color: #2c3e50;
+            margin-bottom: 8px;
+        }
+
+        code {
+            background-color: #e0e0e0;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: Consolas, monospace;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 600px) {
+            .flex-container {
+                min-height: 350px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Das CSS Flexbox-Labor</h1>
+        <p class="description">Flexbox richtet Elemente ganz einfach entlang einer Hauptachse aus. Schau dir an, wie sich die Boxen im grauen Container verteilen!</p>
+
+        <div class="flex-labor-titel">Vorschau: (display: flex;)</div>
+        
+        <div class="flex-container">
+            <div class="flex-item item-1">Box 1</div>
+            <div class="flex-item item-2">Box 2</div>
+            <div class="flex-item item-3">Box 3</div>
+        </div>
+
+        <div class="cheat-sheet">
+            <h2>Wichtige Flexbox-Befehle zum Testen:</h2>
+            <div class="cheat-grid">
+                <div class="cheat-card">
+                    <h3>1. Hauptachse ausrichten</h3>
+                    <p>Nutze <code>justify-content</code> im Code, um die Boxen horizontal zu verschieben:</p>
+                    <p style="margin-top:5px; font-size:0.85rem;">Werte: <code>flex-start</code>, <code>center</code>, <code>flex-end</code>, <code>space-between</code></p>
+                </div>
+                <div class="cheat-card">
+                    <h3>2. Querachse ausrichten</h3>
+                    <p>Nutze <code>align-items</code> für die vertikale Ausrichtung im Container:</p>
+                    <p style="margin-top:5px; font-size:0.85rem;">Werte: <code>flex-start</code>, <code>center</code>, <code>flex-end</code>, <code>stretch</code></p>
+                </div>
+                <div class="cheat-card">
+                    <h3>3. Richtung ändern</h3>
+                    <p>Mit <code>flex-direction</code> drehst du die Achse. Aus nebeneinander wird untereinander:</p>
+                    <p style="margin-top:5px; font-size:0.85rem;">Werte: <code>row</code>, <code>column</code></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
